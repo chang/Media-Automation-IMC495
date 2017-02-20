@@ -1,0 +1,45 @@
+Tutorials:
+These are roughly in the order of which they'll be presented.
+
+1. Signing up for Twilio and getting a Twilio phone number
+2. Sending an SMS
+3. Structure of receiving SMS using Twilio
+	- SMS goes to Twilio number -> POST request sent to configured URL ->
+	- POST request is processed by webserver (we'll set one up with Flask) ->
+		- Information is stored
+		- A TwiML string is returned, telling Twilio how to respond
+4. Setting up a Flask webserver
+5. Exposing Flask to the internet using ngrok for prototpying and deploying using Heroku/AWS
+6. Setting up data structure to store subscribers and survey responses, processing POST request
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Only sending messages to customers that have opted in.
+
+Pricing:
+
+Local numbers: $1/month
+Receiving Text: $0.0075
+Sending Text: $0.0075
+
+
+100 phone numbers fleet as "customers"
+15 students
+
+Opt in messages (receive): 15 * 1 * 100 = 1500 * .0075 = 11.25
+Opt in messages (send): 15 * 1 * 100 = 1500 * .0075 = 11.25
+Marketing messages (receive): 15 * 3 * 100 = 4500 * .0075 = 33.75
+Survey (receive): 15 * 1 * 100 = 1500 * .0075 = 11.25
+Survey (respond): 100 * 15 * 1 = 1500 * .0075 = 33.75
