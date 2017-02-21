@@ -7,9 +7,14 @@ app = Flask(__name__)
 database = Subscriber()
 
 
-# Twilio configured incoming message handler
 @app.route('/twilio', methods=['POST', 'GET'])
 def message():
+	"""
+	Twilio configured incoming message handler:
+	If the request is GET, we return a welcome message to the browser.
+	If the request is POST, we know it is from Twilio and we process
+	the phone number into a database and return instructions in TwiML.
+	"""
 	if request.method == "POST":
 		from_, body = parse_request(request)
 
@@ -37,19 +42,7 @@ def subscribers_page():
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
-	if request.method == "POST":
-		# If we get a POST request, return a TwiML formatted instruction
-		print("We got a POST request!")
-		print(request.form)
-		twiml_response = "<Response><Message> This is an automated response.</Message></Response>"
-		return twiml_response
-	elif request.method == "GET":
-		print("We got a GET request!")
-
 	return "Hello twilio!"
-
-
-
 
 
 if __name__ == "__main__":
