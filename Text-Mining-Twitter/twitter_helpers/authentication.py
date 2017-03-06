@@ -1,5 +1,5 @@
 import twitter
-from python.API_KEYS_TWITTER import *
+from twitter_helpers.API_KEYS_TWITTER import *
 
 def authenticate_twitter():
 	"""
