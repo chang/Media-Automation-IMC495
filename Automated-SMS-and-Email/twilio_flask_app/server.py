@@ -27,7 +27,6 @@ def message():
 		else:
 			return twiml_response("Yep, Twilio is working as it should!")
 
-
 	elif request.method == "GET":
 		return "Hello from the twilio message handler!"
 

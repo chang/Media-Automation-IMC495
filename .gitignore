@@ -1,5 +1,5 @@
 API_KEYS*
-.ipynb_checkpoints
+.ipynb_checkpoint*
 __pycache__
 .DS_Store
 
